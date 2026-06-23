@@ -68,6 +68,11 @@
   .subCard.med{background:#1a1c2c;border-color:#33375a;}
   .subCard .sKind.kMed{color:#bcd0f5;border-color:#4a5285;}
   .subCard .medNote{margin-top:10px;font-size:10px;color:#8a93b5;border-top:1px solid #2a2e4a;padding-top:8px;line-height:1.4;}
+  .subCard.drug{background:#2a1614;border-color:#5a2e28;}
+  .subCard .sKind.kDrug{color:#f5b8b0;border-color:#7a3a30;background:#3a1c18;}
+  .subCard .drugEl{margin-top:10px;font-size:12px;}
+  .subCard .drugEl .elList{color:#f0c0b8;font-weight:600;}
+  .subCard .drugNote{margin-top:10px;font-size:10px;color:#d59a92;border-top:1px solid #5a2e28;padding-top:8px;line-height:1.4;}
   .subCard .sDef{font-size:13px;color:var(--chalk-blue);margin-top:9px;line-height:1.55;}
   .subCard .sMakeup{margin-top:11px;}
   .subCard .sLabel{font-size:11px;color:var(--chalk-yellow);letter-spacing:1px;margin-bottom:5px;}
@@ -342,6 +347,12 @@ const SUBSTANCES = [
   {id:"vimpat",name:"빔스크",kind:"medicine",emoji:"💊",aliases:["라코사마이드","lacosamide","빔스크정"],def:"경련을 가라앉히는 3세대 항경련제(라코사마이드).",makeup:["라코사마이드(C₁₃H₁₈N₂O₃)"],history:"2008년경 나온 비교적 최신 항경련제예요.",use:"부분발작 등 뇌전증, 하루 두 번 복용.",risk:"어지럼·두통·복시(겹보임) 가능."},
   {id:"gasmotin",name:"가스모틴",kind:"medicine",emoji:"💊",aliases:["모사프리드","mosapride"],def:"위장 운동을 돕는 약(모사프리드).",makeup:["모사프리드(C₂₁H₂₅ClFN₃O₃)"],history:"위장관 운동 촉진제로 개발됐어요.",use:"소화불량, 속쓰림, 위장 운동 저하.",risk:"설사·복통 등 위장 증상 가능."},
   {id:"inderal",name:"인데놀",kind:"medicine",emoji:"💊",aliases:["프로프라놀롤","propranolol"],def:"심박·떨림·혈압을 가라앉히는 약(프로프라놀롤, 베타차단제).",makeup:["프로프라놀롤(C₁₆H₂₁NO₂)"],history:"1960년대에 나온 최초의 베타차단제 계열.",use:"손떨림, 빠른 맥박, 고혈압, 무대공포·긴장 완화.",risk:"천식·저혈압·서맥 주의. 갑자기 끊지 않기."},
+  {id:"fentanyl",elements:["탄소 C","수소 H","질소 N","산소 O"],name:"펜타닐",kind:"drug",emoji:"☠️",aliases:["fentanyl"],def:"강력한 합성 오피오이드 진통제. 의료용으로 쓰이지만 오남용 시 극히 위험한 마약류예요.",makeup:["펜타닐(C₂₂H₂₈N₂O)"],history:"1960년 의료용 진통·마취제로 개발됐어요. 2010년대 이후 북미에서 불법 유통과 과다복용 사망이 급증했어요.",use:"의료에서는 강한 통증·마취에 엄격한 관리 아래 사용해요.",risk:"⚠️ 모르핀의 약 100배 효력. 극소량으로도 호흡이 멈춰 사망할 수 있어요. 중독성이 매우 강하고, 다른 약물에 몰래 섞여 사고사를 일으키는 주요 원인이에요. 의료 외 사용은 불법입니다."},
+  {id:"heroin",elements:["탄소 C","수소 H","질소 N","산소 O"],name:"헤로인",kind:"drug",emoji:"☠️",aliases:["heroin","디아모르핀"],def:"양귀비에서 나온 모르핀을 변형한 불법 오피오이드 마약.",makeup:["다이아세틸모르핀(C₂₁H₂₃NO₅)"],history:"19세기말 진통제로 팔렸으나 강한 중독성이 드러나 20세기 초 대부분 국가에서 금지됐어요.",use:"의료적 용도 없음(대부분 국가에서 전면 불법).",risk:"⚠️ 강한 의존성과 금단증상. 호흡 억제로 인한 과다복용 사망, 주사 공유로 인한 감염병 위험이 커요."},
+  {id:"methamphetamine",elements:["탄소 C","수소 H","질소 N"],name:"필로폰",kind:"drug",emoji:"☠️",aliases:["메스암페타민","히로뽕","methamphetamine","크리스탈메스"],def:"중추신경을 강하게 흥분시키는 불법 각성제 마약.",makeup:["메스암페타민(C₁₀H₁₅N)"],history:"20세기 초 합성됐고 한때 각성제로 쓰였으나, 심각한 중독성 때문에 마약류로 엄격히 규제돼요.",use:"의료적 용도 거의 없음(대부분 불법).",risk:"⚠️ 극심한 중독성. 환각·망상·공격성, 치아·피부 손상, 심장마비·뇌졸중 위험. 한국에서 대표적으로 처벌되는 마약이에요."},
+  {id:"cocaine",elements:["탄소 C","수소 H","질소 N","산소 O"],name:"코카인",kind:"drug",emoji:"☠️",aliases:["cocaine","코카"],def:"코카 잎에서 추출한 강력한 흥분성 마약.",makeup:["코카인(C₁₇H₂₁NO₄)"],history:"19세기 코카 잎에서 분리, 한때 의약품·음료에 쓰였으나 중독성 때문에 금지됐어요.",use:"극히 제한된 국소마취 외에는 불법.",risk:"⚠️ 강한 의존성. 심장 발작·부정맥·뇌졸중, 코·점막 손상, 과다복용 사망 위험."},
+  {id:"cannabis",elements:["탄소 C","수소 H","산소 O"],name:"대마",kind:"drug",emoji:"🌿",aliases:["마리화나","cannabis","대마초"],def:"대마초 식물에서 나온 향정신성 물질. 핵심 성분은 THC예요.",makeup:["THC(C₂₁H₃₀O₂)","CBD 등"],history:"오래전부터 섬유·약용으로 쓰였고, 향정신성 효과 때문에 많은 나라에서 규제돼요.",use:"일부 국가·의료용으로 제한적 허용. 한국에서는 사용·소지가 불법이에요.",risk:"⚠️ 의존·인지 저하·불안, 청소년 뇌 발달 영향. 한국 국적자는 합법인 나라에서 사용해도 처벌될 수 있어요."},
+  {id:"lsd",elements:["탄소 C","수소 H","질소 N","산소 O"],name:"LSD",kind:"drug",emoji:"☠️",aliases:["엘에스디","환각제"],def:"극소량으로 강한 환각을 일으키는 합성 향정신성 마약.",makeup:["LSD(C₂₀H₂₅N₃O)"],history:"1938년 합성, 1960년대 환각제로 퍼졌다가 대부분 국가에서 금지됐어요.",use:"의료적 용도 없음(불법).",risk:"⚠️ 극심한 환각·공황, 판단력 상실로 인한 사고, 플래시백(시간이 지나도 증상 재현)."},
 ];
 SUBSTANCES.forEach(s=>{ s._keys=[s.name,...(s.aliases||[])].map(k=>k.toLowerCase()); });
 const CHIP_WORDS=['콜라','석유','플라스틱','손톱','유리','내 약','라믹탈','시멘트','고무','선크림','치약','건전지','술','녹','방귀'];
@@ -499,15 +510,16 @@ function runDictSearch(){
 }
 $('dictResults').addEventListener('touchstart',()=>{$('dictSearch').blur();},{passive:true});
 $('dictBody').addEventListener('scroll',()=>{if(document.activeElement===$('dictSearch'))$('dictSearch').blur();},{passive:true});
-function kindLabel(k){return k==='compound'?'화합물':k==='mixture'?'혼합물':k==='medicine'?'약':'소재';}
+function kindLabel(k){return k==='compound'?'화합물':k==='mixture'?'혼합물':k==='medicine'?'약':k==='drug'?'마약(위험)':'소재';}
 function cardHtml(s){
   const isMed=s.kind==='medicine';
-  const makeupLabel=isMed?'주요 성분':'무엇으로 이뤄졌나';
+  const isDrug=s.kind==='drug';
+  const makeupLabel=(isMed||isDrug)?'주요 성분':'무엇으로 이뤄졌나';
   const histLabel=isMed?'특징':'역사';
-  const useLabel=isMed?'쓰임':'쓰임';
-  const riskLabel=isMed?'주의':'주의';
-  return `<div class="subCard${isMed?' med':''}">
-    <div class="sHead"><span class="sEmoji">${s.emoji||'•'}</span><span class="sName">${s.name}</span><span class="sKind${isMed?' kMed':''}">${kindLabel(s.kind)}</span></div>
+  const useLabel='쓰임';
+  const riskLabel=isMed?'주의':'위험';
+  return `<div class="subCard${isMed?' med':''}${isDrug?' drug':''}">
+    <div class="sHead"><span class="sEmoji">${s.emoji||'•'}</span><span class="sName">${s.name}</span><span class="sKind${isMed?' kMed':''}${isDrug?' kDrug':''}">${kindLabel(s.kind)}</span></div>
     <div class="sDef">${escapeHtml(s.def)}</div>
     <div class="sMakeup"><div class="sLabel">${makeupLabel}</div>
       <div class="makeChips">${s.makeup.map(m=>`<span class="makeChip">${escapeHtml(m)}</span>`).join('')}</div></div>
@@ -516,7 +528,9 @@ function cardHtml(s){
       <div class="sRow"><span class="rk">${useLabel}</span><span class="rv">${escapeHtml(s.use)}</span></div>
       <div class="sRow${/⚠️|위험|화상|독|유독|발진|금단|의존/.test(s.risk)?' danger':''}"><span class="rk">${riskLabel}</span><span class="rv">${escapeHtml(s.risk)}</span></div>
     </div>
-    ${isMed?'<div class="medNote">※ 일반 정보예요. 복용·중단은 꼭 담당 의사·약사와 상의하세요.</div>':''}</div>`;
+    ${isDrug?`<div class="drugEl"><span class="sLabel">들어가는 원소</span> <span class="elList">${(s.elements||[]).join(' · ')}</span></div>`:''}
+    ${isMed?'<div class="medNote">※ 일반 정보예요. 복용·중단은 꼭 담당 의사·약사와 상의하세요.</div>':''}
+    ${isDrug?'<div class="drugNote">※ 마약류는 소지·사용 자체가 불법이며 생명을 위협합니다. 이 정보는 경각심을 위한 것입니다. 중독·도움이 필요하면 1342(한국 마약류 상담)로 연락하세요.</div>':''}</div>`;
 }
 
 /* ===== 게임: 원소 탭 ===== */
